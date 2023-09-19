@@ -4,9 +4,9 @@ import {getUsers,getUsersSuccess,getUsersError} from './slice'; // Import your s
 const  getUsersAsync =async(payload) =>{
     try {
         console.log(1);
-        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+        const response = await fetch('https://dummyjson.com/users');
         const data = await response.json();
-        // console.log('returnedData', data);
+
         return{
             users: data
         }
@@ -16,12 +16,9 @@ const  getUsersAsync =async(payload) =>{
 }
 function* getUserData({payload}) {
   try {
-    console.log(2);
+
     const returnedData = yield call(getUsersAsync, payload);
-    // const response = yield fetch('https://jsonplaceholder.typicode.com/users');
-    // const data = yield response.json();
-    // console.log('returnedData', data);
-    console.log(returnedData.users);
+
     if (returnedData.users) {
         
         yield put(getUsersSuccess(returnedData.users));

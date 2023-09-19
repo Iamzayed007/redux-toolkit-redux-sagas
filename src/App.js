@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { getUsers } from './redux/user/slice';
-import { type } from '@testing-library/user-event/dist/type';
+
+
+import {
+  BrowserRouter as Router,
+  Routes ,
+  Route,
+  Link
+} from "react-router-dom";
+import Users from './views/Users';
 
 function App() {
-  const userSelector = useSelector(state=> state.userReducer)
-  const dispatch =useDispatch()
-  console.log(userSelector);
-  useEffect(() => {
-    dispatch(getUsers())
-  
-   
-  }, [])
+
   
   return (
-    <div className="App">
-    ok
-    </div>
+    <Router >
+        <Routes >
+          <Route path="/" element={ <Users />}>
+           
+          </Route>
+  
+        </Routes>
+    </Router>
   );
 }
 
