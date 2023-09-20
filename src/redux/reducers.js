@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
-import { reducer as userReducer } from './user/slice'; // Create your own slice
+import { reducer as userReducer } from './user/slice'; 
+import useDetailsReducer from './userDetails/slice'
 
 const rootReducer = combineReducers({
   userReducer,
-  // Add other reducers here if needed
+  useDetailsReducer
+
 });
 
 export default rootReducer;

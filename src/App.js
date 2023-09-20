@@ -11,6 +11,7 @@ import Users from './views/Users';
 import { useState } from "react";
 import { ThemeContext } from "./context/ThemeContext";
 import Theme from "./components/Theme/Theme";
+import UserDetails from "./views/UserDetails/UserDetails";
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -22,6 +23,9 @@ function App() {
       <Theme/>
         <Routes >
           <Route path="/" element={ <Users />}>
+           
+          </Route>
+          <Route path="/:userId" element={ <UserDetails />}>
            
           </Route>
   

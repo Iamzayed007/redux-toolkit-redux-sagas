@@ -2,33 +2,33 @@ import React, { useContext, useEffect } from 'react'
 import { ThemeContext } from '../../context/ThemeContext';
 
 const Theme = () => {
-    const { theme, setTheme } = useContext(ThemeContext);
-    console.log(theme);
-    
-      useEffect(() => {
-        if (theme == 'dark') {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
-    
-        localStorage.setItem('darkMode', theme);
-      }, [theme]);
-      const toggleMode =()=>{
-        if (theme == 'light') {
-            
-            setTheme('dark')
-        }
-        else{
-            setTheme('light')
-        }
-      }
+  const { theme, setTheme } = useContext(ThemeContext);
+  console.log(theme);
+
+  useEffect(() => {
+    if (theme == 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+    localStorage.setItem('darkMode', theme);
+  }, [theme]);
+  const toggleMode = () => {
+    if (theme == 'light') {
+
+      setTheme('dark')
+    }
+    else {
+      setTheme('light')
+    }
+  }
   return (
     <div className='flex justify-end pt-4 mr-10'>
-         <button 
-    title="Toggle Theme" 
-    onClick={toggleMode}
-    class="
+      <button
+
+        onClick={toggleMode}
+        className="
         w-12 
         h-6 
         rounded-full 
@@ -45,8 +45,8 @@ const Theme = () => {
         dark:focus:ring-blue-600 
         focus:border-transparent
       ">
-      <div id="toggle"
-        class="
+        <div
+          className="
             rounded-full 
             w-4 
             h-4 
@@ -60,8 +60,8 @@ const Theme = () => {
             duration-300 
             ease-out
         ">
-      </div>
-</button>
+        </div>
+      </button>
     </div>
   )
 }
